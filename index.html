@@ -1,14 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dev portfolio</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dev portfolio</title>
+    <link rel="icon" type="./icons/icon.png" href="./icons/icon.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
     <link rel="stylesheet" href="stylestyle.css" />
+    <style>
+        * {
+            color: #fff;
+            font-family: "Itim", cursive;
+            font-weight: 400;
+            font-style: normal;
+        }
+    </style>
 </head>
+
 <body>
-  <div class="liquid-bg">
-    <div class="blob"></div>
-  </div>
+    <div class="liquid-bg">
+        <div class="blob"></div>
+    </div>
+    <div id="main" data-scroll-container>
+
+        <nav>
+            <ul>
+                <li style="list-style: circle;">
+                    < \ Home>
+                </li>
+                <li>
+                    < \ AboutMe>
+                </li>
+                <li>
+                    < \ projets>
+                </li>
+                <li>
+                    < \ Contact>
+                </li>
+            </ul>
+        </nav>
+        <main data-scroll data-scroll-speed="2">
+            <img src="./icons/HaiDev.png" alt="MyImage">
+            <div class="TextPart" data-scroll data-scroll-direction="horizontal" data-scroll-speed="2">
+                <h1 style="font-size: 50px;">{<br>Hello I'm : "
+                    <span>
+                        <h1>D</h1>
+                        <h1>E</h1>
+                        <h1>V</h1>
+                    </span>"}
+                </h1>
+                <h1>Coding and gaming are my core.</h1>
+                <h2>But Now i Am a Full Time Coder <br style="margin-left: 20px;">And Gamer By Hobby.</h2>
+            </div>
+        </main>
+        <div id="mainPart2" data-scroll data-scroll-speed="1">
+            <div class="nav">
+                <img class="home" src="./icons/home.png" alt="home">
+                <ul>
+                    <li class="Home">Home</li>
+                    <li class="about">About</li>
+                    <li class="project">project</li>
+                    <li class="contact">Contact</li>
+                </ul>
+            </div>
+            <div id="eyegay">
+                <img src="./icons/dev.png" alt="dev" class="devImg">
+                <div class="eyes">
+                    <div class="eye">
+                        <div class="pupil"></div>
+                    </div>
+                    <div class="eye">
+                        <div class="pupil"></div>
+                    </div>
+                </div>
+                <div class="aboutMePage">
+                    <div class="aboutH1">
+                        <h1>About</h1><h1>Me</h1>
+                    </div>
+                    <p>
+                        Hello, I'm Devesh Shukla, a passionate coder and gamer. I love creating innovative solutions and
+                        exploring new technologies. My journey in coding has been exciting, and I enjoy sharing my knowledge
+                        with others. When I'm not coding, you can find me immersed in the world of gaming, where I find
+                        inspiration and creativity.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <footer>By Devesh Shukla</footer> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+        integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"
+        integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>
