@@ -66,16 +66,20 @@ const scroll = new LocomotiveScroll({
 });
 
 const home = document.querySelector('.home');
-console.log(home);
+// console.log(home);
 const Home = document.querySelector('.Home');
 const about = document.querySelector('.about');
 const project = document.querySelector('.project');
 const contact = document.querySelector('.contact');
 const ul = document.querySelectorAll('#mainPart2 .nav ul li');
+const eyees= document.querySelectorAll('#mainPart2 .eye');
 let a = 0;
 home.addEventListener('click', () => {
   if (a == 0) {
-    console.log("if");
+    // console.log("if");
+    eyees.forEach((e) => {
+      e.style.top="41vh";
+    });
     home.style.height = "100px";
     home.style.transform = "rotate(360deg)";
     ul.forEach((e) => {
@@ -84,6 +88,9 @@ home.addEventListener('click', () => {
     a += 1;
   } else {
     home.style.height = "150px";
+    eyees.forEach((e) => {
+      e.style.top="34vh";
+    });
     home.style.transform = "rotate(-360deg)";
     console.log("else");
     ul.forEach((e) => {
@@ -125,8 +132,9 @@ t1.to("#eyegay .eye", {
 })
 
 
-let me = document.querySelectorAll('.aboutMePage h1')
-// console.log(me);
+let me = document.querySelectorAll('.aboutMePage h1,#mainPart2 ul li')
+  
+
 me.forEach((e) => {
   document.addEventListener('mousemove', (event) => {
     const x = event.clientX; // Or pageX, depending on your needs
@@ -135,7 +143,7 @@ me.forEach((e) => {
     const totalHeight = window.innerHeight;
 
     // Calculate the hue value based on mouse coordinates
-    const hue = (x / totalWidth) * 360; // Example: map x to full hue spectrum
+    const hue = (x / totalWidth) * 360 + (y / totalHeight) * 100; // Example: map x to full hue spectrum
 
     // Create the HSL color string
     const color = `hsl(${hue}, 100%, 50%)`;
@@ -145,6 +153,8 @@ me.forEach((e) => {
   });
   
 });
+
+
 
 
 
