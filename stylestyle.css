@@ -16,8 +16,10 @@ body {
     top: 0;
     transition: all 0.008s ease-in;
     left: 0;
-    z-index: -1;
+    z-index: -99;
 }
+
+
 
 .blob {
     position: fixed;
@@ -28,6 +30,7 @@ body {
     background: radial-gradient(circle at 80% 40%, #8B008B, #2A1A36);
     filter: blur(80px);
     opacity: 0.7;
+    /* z-index: -99; */
     right: -5%;
     transition: all 0.05s linear;
     top: 5%;
@@ -87,6 +90,46 @@ nav {
     margin-right: 5vw;
 }
 
+@media (max-width: 1024px) {
+    nav {
+        position: absolute;
+        right: 0;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        background: #11111B;
+        overflow-x: hidden;
+    }
+
+    nav ul {
+        justify-content: center;
+        align-items: flex-end;
+        /* position: relative; */
+        gap: 5vw;
+        flex-direction: column;
+    }
+
+    nav ul li {
+        list-style: none;
+        cursor: pointer;
+        /* transition: hover 1s ease-in; */
+        padding: 2px;
+        font-size: 15px;
+        /* transition: all 0.2s ease-in-out; */
+    }
+
+    .blob {
+        width: 400px;
+        height: 600px;
+        right: -10%;
+        top: 10%;
+        z-index: -200;
+    }
+}
+
 nav ul li {
     list-style: none;
     cursor: pointer;
@@ -123,6 +166,33 @@ main .TextPart {
     position: relative;
 }
 
+@media (max-width: 1024px) {
+
+    main .TextPart {
+        left: 0;
+        top: -100px;
+        /* font-size:2 ;  */
+        /* position: absolute; */
+    }
+
+    .BackImage {
+        height: 60vh;
+        /* opacity: 0; */
+        right: -2vh;
+        top: 60vh;
+        overflow: hidden;
+    }
+
+    #mainPart2 .aboutMePage p {
+        font-size: 13px;
+    }
+
+    #mainPart2 .aboutMePage h1 {
+        font-size: 20px;
+        color: red;
+    }
+}
+
 main span {
     /* position:sticky; */
     display: flex;
@@ -156,7 +226,7 @@ main h2 {
     text-align: center;
 }
 
-body > img {
+body>img {
     cursor: pointer;
     position: fixed;
     height: 130vh;
@@ -165,13 +235,14 @@ body > img {
     right: -9vw;
     transition: all 0.5s ease-in-out;
     opacity: 0.5;
-    z-index: -2;
+    z-index: -10;
     animation: floating 5s ease-in-out 2s infinite;
 }
 
-#main{
+#main {
     position: relative;
 }
+
 @keyframes floating {
     0% {
         transform: translate(0px);
@@ -206,17 +277,7 @@ body > img {
     z-index: -1;
     /* border-b?ottom: 2px solid #ffffff; */
 }
-#mainPart2 video{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    object-fit: cover;
-    filter: blur(5px);
-    opacity: 0.5;
-}
+
 .aboutMePage {
     /* position: relative; */
     background-color: #202026;
@@ -284,6 +345,26 @@ body > img {
     /* border-bottom: 2px solid #ffffff; */
 }
 
+@media (max-width: 1024px) {
+    #main .technologies ul {
+        width: 60%;
+    }
+
+    #main .technologies ul li .ListImage {
+        height: 5vh;
+    }
+
+    #projects ul li {
+        flex-direction: column;
+    }
+
+    #projects {
+        align-items: center;
+        justify-content: center;
+        width: 70%
+    }
+}
+
 .technologies ul {
     display: flex;
     justify-content: center;
@@ -319,6 +400,7 @@ body > img {
 
 .technologies ul li img {
     position: relative;
+    height: 15vh;
     z-index: 90;
     filter: brightness(1.2);
 }
@@ -374,12 +456,14 @@ body > img {
     padding: 0px;
     color: #000;
 }
-#projects ul li p{ 
+
+#projects ul li p {
     font-size: 20px;
     font-weight: 400;
     /* text-align: center; */
-    margin: 0;  
+    margin: 0;
 }
+
 #projects ul h1 {
     background-color: #33333378;
 
@@ -431,6 +515,18 @@ footer ul li img {
     height: 10vh;
 }
 
+@media (max-width: 1024px) {
+    footer ul {
+        gap: 5vw;
+        left: -10vw;
+        position: relative;
+    }
+
+    .mainFooter img{
+          content:url(./icons/icon.png);
+    }
+}
+
 footer ul li img:hover {
     transform: scale(1.1);
     filter: drop-shadow(0 0 10px #ffffff);
@@ -444,7 +540,7 @@ footer img {
 }
 
 .eyes {
-    position: absolute;
+    /* position: absolute; */
     display: flex;
     z-index: 10;
     gap: 44px;
