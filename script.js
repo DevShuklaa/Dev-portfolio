@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
   const eyees = document.querySelectorAll('.eye');
- 
+
   const t1 = gsap.timeline({
     scrollTrigger: {
       trigger: "main",
@@ -61,9 +61,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let me = document.querySelectorAll('.aboutH1 h1,footer h1');
   console.log(me);
-  
+
   me.forEach((e) => {
-    
+
     document.addEventListener('mousemove', (event) => {
       // console.log("Hello in listner")
       const x = event.clientX; // Or pageX, depending on your needs
@@ -92,11 +92,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // console.log(eyes);
 
 
-  document.addEventListener('mousemove', (event) => {
+  // Function to update eye positions
+  function updateEyePositions(event) {
     eyes.forEach(eye => {
-      // console.log(eye
       const pupil = eye.querySelector('.pupil');
-      // console.log(pupil);
       const rect = eye.getBoundingClientRect();
       const eyeCenterX = rect.left + rect.width / 2;
       const eyeCenterY = rect.top + rect.height / 2;
@@ -105,12 +104,55 @@ document.addEventListener('DOMContentLoaded', () => {
       const dy = event.clientY - eyeCenterY;
       const angle = Math.atan2(dy, dx);
 
-      const radius = 30;
-      const pupilX = Math.cos(angle) * radius;
-      const pupilY = Math.sin(angle) * radius;
-      pupil.style.left = `${10 + pupilX * 0.5}px`;
-      pupil.style.top = `${12 + pupilY * 0.5}px`;
+      // Calculate radius based on eye size for better responsiveness
+      const eyeRadius = Math.min(rect.width, rect.height) / 2;
+      const maxPupilMovement = eyeRadius * 0.6; // Increased to 60% for more movement
+
+      const pupilX = Math.cos(angle) * maxPupilMovement;
+      const pupilY = Math.sin(angle) * maxPupilMovement;
+
+      // Use percentage-based positioning with more range for better responsiveness
+      const pupilXPercent = (50 + (pupilX / eyeRadius) * 35); // 15% to 85% range
+      const pupilYPercent = (50 + (pupilY / eyeRadius) * 35);
+
+      pupil.style.left = `${Math.max(15, Math.min(85, pupilXPercent))}%`;
+      pupil.style.top = `${Math.max(15, Math.min(85, pupilYPercent))}%`;
     });
+  }
+
+  // Mouse move event listener
+  document.addEventListener('mousemove', updateEyePositions);
+
+  // Touch support for mobile devices
+  document.addEventListener('touchmove', (event) => {
+    event.preventDefault();
+    const touch = event.touches[0];
+    const mouseEvent = new MouseEvent('mousemove', {
+      clientX: touch.clientX,
+      clientY: touch.clientY
+    });
+    updateEyePositions(mouseEvent);
+  });
+
+  // Window resize event listener to recalculate positions
+  window.addEventListener('resize', () => {
+    // Reset pupils to center position on resize
+    eyes.forEach(eye => {
+      const pupil = eye.querySelector('.pupil');
+      pupil.style.left = '50%';
+      pupil.style.top = '50%';
+    });
+  });
+
+  // Orientation change support for mobile devices
+  window.addEventListener('orientationchange', () => {
+    setTimeout(() => {
+      eyes.forEach(eye => {
+        const pupil = eye.querySelector('.pupil');
+        pupil.style.left = '50%';
+        pupil.style.top = '50%';
+      });
+    }, 100);
   });
 
 
