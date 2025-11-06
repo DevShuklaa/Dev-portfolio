@@ -600,84 +600,42 @@ footer img {
 
 /* Standard Desktop */
 @media (max-width: 1399px) and (min-width: 1200px) {
-    .eyes {
-        top: 55%;
-        left: 49.8%;
-        gap: clamp(25px, 4vw, 35px);
-        max-width: 220px;
-    }
-
-    .eye {
-        width: clamp(40px, 5vw, 65px);
-        height: clamp(40px, 5vw, 65px);
+    .mainFooter img {
+        src: url(icons/icon.png);
     }
 }
 
 /* Laptop Screens */
 @media (max-width: 1199px) and (min-width: 1100px) {
-    .eyes {
-        top: 55%;
-        left: 49.8%;
-        gap: clamp(20px, 4vw, 35px);
-        max-width: 200px;
-    }
-
-    .eye {
-        width: clamp(40px, 5vw, 60px);
-        height: clamp(40px, 5vw, 60px);
+    .mainFooter img {
+        src: url(icons/icon.png);
     }
 }
 
 /* Tablets */
 @media (max-width: 899px) and (min-width: 769px) {
     .mainFooter img {
-        width: 1px;
-        height: 1px;
-        opacity: 0px;
+        src: url(icons/icon.png);
     }
 }
 
 /* Large Mobile Devices */
 @media (max-width: 768px) and (min-width: 481px) {
-    .eyes {
-        top: 50%;
-        left: 49%;
-        gap: clamp(14px, 2.5vw, 25px);
-        max-width: 160px;
-    }
-
-    .eye {
-        width: clamp(30px, 3.5vw, 45px);
-        height: clamp(30px, 3.5vw, 45px);
+    .mainFooter img {
+        src: url(icons/icon.png);
     }
 }
 
 /* Small Mobile Devices */
 @media (max-width: 480px) {
-    .eyes {
-        top: 48%;
-        left: 48.5%;
-        gap: clamp(12px, 2vw, 20px);
-        max-width: 140px;
-    }
-
-    .eye {
-        width: clamp(25px, 3vw, 35px);
-        height: clamp(25px, 3vw, 35px);
+    .mainFooter img {
+        src: url(icons/icon.png);
     }
 }
 
 /* Very Small Screens */
 @media (max-width: 320px) {
-    .eyes {
-        top: 47%;
-        left: 48%;
-        gap: clamp(10px, 1.5vw, 15px);
-        max-width: 120px;
-    }
-
-    .eye {
-        width: clamp(20px, 2.5vw, 30px);
-        height: clamp(20px, 2.5vw, 30px);
+    .mainFooter img {
+        src: url(icons/icon.png);
     }
 }
