@@ -92,7 +92,7 @@ nav {
 
 @media (max-width: 1024px) {
     nav {
-        position: absolute;
+        position: fixed;
         right: 0;
     }
 
@@ -146,7 +146,7 @@ nav ul li:hover {
 
 /* #center writing */
 main {
-    position: relative;
+    position:relative;
     display: flex;
     font-family: "Itim", cursive;
     height: 100vh;
@@ -155,7 +155,7 @@ main {
     overflow: hidden;
     font-style: normal;
     justify-content: center;
-    z-index: 10;
+    z-index: 100;
     align-items: center;
     flex-direction: column;
 }
@@ -422,6 +422,7 @@ body>img {
     text-align: center;
     padding: 20px;
     min-height: 100vh;
+
     width: 100%;
     display: flex;
     justify-content: center;
@@ -431,15 +432,23 @@ body>img {
 
 #projects {
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-direction: column;
-    width: 60%;
+    justify-content: center;
+    align-items: center;
+
+    /* flex-direction: column; */
+    min-width: 60%;
+    padding:0 3vw ;
     border-radius: 20px;
     background-color: #202026;
     height: 50vh;
     margin: 0 auto;
+    gap: 2vw;
     /* border-bottom: 2px solid #ffffff; */
+}
+
+#projects ul li img{
+    width:15vw; 
+    height: 17vh;
 }
 
 #projects ul li {
@@ -464,13 +473,16 @@ body>img {
     margin: 0;
 }
 
-#projects ul h1 {
+#projects ul{
     background-color: #33333378;
-
-    font-size: 50px;
-    border-radius: 10px;
+    
+     border-radius: 10px;
     box-shadow: #c22e62 2px 0px 10px;
     padding: 0 10px;
+}
+
+#projects ul h1 {
+    font-size: 50px;
 }
 
 footer {
