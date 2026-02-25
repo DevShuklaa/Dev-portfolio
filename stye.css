@@ -81,18 +81,16 @@ body {
 /* nav design */
 .modern-nav {
     position: fixed;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 30px;
+    top: 30px;
+    right: 50px;
     z-index: 1000;
-    padding: 10px;
+    padding: 10px 30px;
 }
 
 .modern-nav ul {
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     gap: 30px;
     margin: 0;
     padding: 0;
