@@ -41,7 +41,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Initial states
   gsap.set(".BackImageContainer", { scale: 0, rotationZ: 720, opacity: 0 });
-  gsap.set(".modern-nav", { y: -100, opacity: 0 });
+  const navStartX = window.innerWidth <= 1024 ? -100 : 100;
+  gsap.set(".modern-nav", { x: navStartX, opacity: 0, yPercent: -50 });
   gsap.set(".TextPart", { x: -200, opacity: 0, rotationY: -45, transformPerspective: 1000 });
 
   loadTl.to(".BackImageContainer", {
@@ -52,10 +53,10 @@ document.addEventListener('DOMContentLoaded', () => {
     ease: "power4.out"
   })
     .to(".modern-nav", {
-      y: 0,
+      x: 0,
       opacity: 1,
       duration: 1,
-      ease: "bounce.out"
+      ease: "power2.out"
     }, "-=2.0")
     .to(".TextPart", {
       x: 0,
